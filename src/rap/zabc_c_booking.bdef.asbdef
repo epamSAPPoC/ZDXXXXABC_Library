@@ -1,0 +1,11 @@
+projection;
+strict;
+
+define behavior for ZABC_C_BOOKING alias booking
+{
+  use create;
+  use update;
+  use delete;
+
+  use action returnTheBook;
+}

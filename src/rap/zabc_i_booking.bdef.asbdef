@@ -1,0 +1,69 @@
+managed implementation in class zbp_abc_i_booking unique;
+
+strict;
+
+
+
+define behavior for ZABC_I_BOOKING alias Booking
+
+persistent table zabc_d_booking_a
+
+lock master
+
+authorization master (instance)
+
+etag master BookingBegTime
+
+{
+
+  create;
+
+  update;
+
+  delete;
+
+
+
+  field (numbering: managed, readonly ) BookingUuid;
+
+  field (mandatory: create) BookId, PersonId;
+
+  field ( readonly ) BookingStatus, BookingBegDate, BookingBegTime, BookingEndDate,     BookingEndTime;
+
+
+
+   validation validateBookAvailability on save {create;}
+
+   determination bookTheBook on save {create;}
+
+   action (features: instance) returnTheBook result [1] $self;
+
+
+
+   mapping for zabc_d_booking_a
+
+
+
+  {
+
+    BookingUuid = booking_uuid;
+
+    BookingId = booking_id;
+
+    BookId = book_id;
+
+    PersonId = person_id;
+
+    BookingStatus = booking_status;
+
+    BookingBegDate = booking_beg_date;
+
+    BookingBegTime = booking_beg_time;
+
+    BookingEndDate = booking_end_date;
+
+    BookingEndTime = booking_end_time;
+
+  }
+
+}
