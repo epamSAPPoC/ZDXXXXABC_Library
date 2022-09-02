@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Selections from tables</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZABC_FGR_SELTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZABC_FGR_SEL</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>Z_ABC_SELECT_SPFLI</FUNCNAME>
+     <SHORT_TEXT>Select from SPFLI table</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_MAX</PARAMETER>
+       <DEFAULT>20</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <REFERENCE>X</REFERENCE>
+       <TYP>INT2</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_FROM</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>ANY TABLE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IT_TO</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>ANY TABLE</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_FLIGHT</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>ANY TABLE</TYP>
+      </RSEXP>
+     </EXPORT>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>NO_DATA</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_MAX</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>2 Byte Signed Integer</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_FROM</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IT_TO</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_FLIGHT</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NO_DATA</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>No records selected</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
