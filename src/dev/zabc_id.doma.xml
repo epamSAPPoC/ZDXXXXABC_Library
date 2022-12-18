@@ -9,6 +9,7 @@
     <LENG>000006</LENG>
     <OUTPUTLEN>000006</OUTPUTLEN>
     <DDTEXT>ID domain</DDTEXT>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
    </DD01V>
   </asx:values>
  </asx:abap>

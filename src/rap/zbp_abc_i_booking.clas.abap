@@ -1,5 +1,11 @@
-CLASS zbp_abc_i_booking DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zabc_i_booking.
+CLASS zbp_abc_i_booking DEFINITION PUBLIC
+                                   FOR BEHAVIOR OF zabc_i_booking.
+
+  PUBLIC SECTION.
+
 ENDCLASS.
 
-CLASS zbp_abc_i_booking IMPLEMENTATION.
+
+
+CLASS ZBP_ABC_I_BOOKING IMPLEMENTATION.
 ENDCLASS.

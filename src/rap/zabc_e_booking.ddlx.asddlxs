@@ -1,8 +1,24 @@
-@Metadata.layer: #CORE
+@Metadata.layer: #CORE                        //  defines the priority of the metadata extension r(#CORE|#LOCALIZATION|#INDUSTRY|#PARTNER|#CUSTOMER).
 @UI.headerInfo: { typeName: 'Booking',
                   typeNamePlural: 'Bookings',
-                  title.value: 'BookingId'
+                  title.value: 'BookingId',            //
+                  description.value: '_Book.BookName'  //
                 }
+@UI.selectionVariant: [{
+    qualifier: 'BDSV',
+    text: 'Booking: Default'
+}]
+@UI.presentationVariant: [{
+    qualifier: 'BDPV',
+    text:'Bookint: Default'
+  }]
+@UI.selectionPresentationVariant: [{
+    id: 'BDSPV',
+    qualifier: 'BDSPV',
+    text:'Bookint: Default',
+    selectionVariantQualifier: 'BDSV',
+    presentationVariantQualifier: 'BDPV'
+ }]
 annotate view ZABC_C_BOOKING with
 {
 
@@ -58,6 +74,7 @@ annotate view ZABC_C_BOOKING with
                 }]
 
   @UI.identification: [{ type: #FOR_ACTION, dataAction: 'returnTheBook', label: 'Return the Book' }]
+  
   @UI.hidden: true
   BookingUuid;
 
@@ -74,12 +91,20 @@ annotate view ZABC_C_BOOKING with
   @UI.lineItem:       [{ position: 30, importance: #HIGH }]
   @UI.fieldGroup:     [{ position: 30, qualifier: 'Reader' }]
   PersonId;
-
+  
+//  @UI.lineItem:       [{ position: 32, importance: #HIGH }]
+//  @UI.fieldGroup:     [{ position: 32, qualifier: 'Reader' }]
+//  ReaderFullName;
+  
   @UI.selectionField: [{ position: 40 }]
   @UI.lineItem:       [{ position: 40, importance: #HIGH }]
   @UI.fieldGroup:     [{ position: 40, qualifier: 'Book' }]
   BookId;
 
+//  @UI.lineItem:       [{ position: 42, importance: #HIGH }]
+//  @UI.fieldGroup:     [{ position: 42, qualifier: 'Book' }]
+//  BookName;
+  
   @UI.selectionField: [{ position: 50 }]
   @UI.lineItem:       [{ position: 50, importance: #HIGH }]
   @UI.fieldGroup:     [{ position: 50, qualifier: 'BookingTime' }]

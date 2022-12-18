@@ -10,7 +10,7 @@ define root view entity zabc_i_author
       country                                                                     as Country,
       _AuthorTxt.AuthorLastName                                                   as AuthorLastName,
       _AuthorTxt.AuthorFirstName                                                  as AuthorFirstName,
-      concat_with_space(_AuthorTxt.AuthorFirstName, _AuthorTxt.AuthorLastName, 1) as AthorFullName,
+      concat_with_space(_AuthorTxt.AuthorFirstName, _AuthorTxt.AuthorLastName, 1) as AuthorFullName,
 
       /* associations */
       _AuthorTxt

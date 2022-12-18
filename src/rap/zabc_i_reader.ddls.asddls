@@ -12,10 +12,13 @@ define view entity zabc_i_reader
   association [0..1] to zabc_d_reader_t as _ReaderTxt on  _ReaderTxt.langu     = $session.system_language
                                                       and _ReaderTxt.person_id = $projection.PersonId
 {
-  key person_id                                                          as PersonId,
-      birth_date                                                         as BirthDate,
-      phone_number                                                       as PhoneNumber,
-      _ReaderTxt.person_first_name                                       as FirstName,
-      _ReaderTxt.person_last_name                                        as LastName,
-      concat( _ReaderTxt.person_first_name, _ReaderTxt.person_last_name) as FullName
+  key person_id                                                                         as PersonId,
+      _ReaderTxt.person_first_name                                                      as FirstName,
+      _ReaderTxt.person_last_name                                                       as LastName,
+      birth_date                                                                        as BirthDate,
+      phone_number                                                                      as PhoneNumber,
+      concat_with_space( _ReaderTxt.person_first_name, _ReaderTxt.person_last_name, 1 ) as FullName,
+
+      /* Associations */
+      _ReaderTxt
 }

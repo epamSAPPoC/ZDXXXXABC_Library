@@ -9,6 +9,7 @@
     <LENG>000015</LENG>
     <OUTPUTLEN>000015</OUTPUTLEN>
     <DDTEXT>Phone domain</DDTEXT>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
    </DD01V>
   </asx:values>
  </asx:abap>
